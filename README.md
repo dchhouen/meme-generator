@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# A meme dynamic website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A meme viewing website where you can put in your own message.
+
+## Live Demo
+
+View a live demo of this App on [Vercel](https://travel-page-static.vercel.app).
+
 
 ## Available Scripts
 
