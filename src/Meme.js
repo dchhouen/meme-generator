@@ -1,13 +1,27 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useState, useEffect,useRef } from 'react'
+import { toPng } from 'html-to-image';
 export default function Meme() {
   const [meme, setMemeImage] = useState({
     topText: "",
     bottomText: "",
-    randomImage: "https://i.imgflip.com/1bij.jpg"
+    randomImage: "https://i.imgflip.com/1bgw.jpg"
 
   })
   const [allMeme, setAllMeme] = useState([])
+  const elementRef = useRef(null);
+
+  const downloadMemeImage = () => {
+    toPng(elementRef.current, { cacheBust: false })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "my-meme-image.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   useEffect(function () {
     fetch("https://api.imgflip.com/get_memes")
@@ -25,6 +39,7 @@ export default function Meme() {
       randomImage: url
     }))
   }
+
 
   function handleChange(event) {
     const { name, value, type } = event.target
@@ -63,7 +78,12 @@ export default function Meme() {
           Get a new meme image  🖼
         </button>
       </div>
-      <div className="meme">
+      <button
+          onClick={downloadMemeImage}
+          className="form--button-2">
+          Download this meme image  🖼
+        </button>
+      <div className="meme" ref={elementRef}>
         <img className="meme--image" src={meme.randomImage} />
         <h2 className="meme--text top">{meme.topText}</h2>
         <h2 className="meme--text bottom">{meme.bottomText}</h2>

@@ -4,7 +4,7 @@ A meme viewing website where you can put in your own message.
 
 ## Live Demo
 
-View a live demo of this App on [Vercel](https://travel-page-static.vercel.app).
+View a live demo of this App on [Vercel](https://meme-generator-pearl-seven.vercel.app/).
 
 
 ## Available Scripts

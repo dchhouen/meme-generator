@@ -57,6 +57,21 @@ body {
   background: linear-gradient(90deg, #711F8D 1.14%, #A818DA 100%);
 }
 
+
+.form--button-2 {
+  display: block;
+  width: 100%;
+  font-family: Karla;
+  border-radius: 5px;
+  color: white;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  background: linear-gradient(90deg, #711F8D 1.14%, #A818DA 100%);
+  margin-bottom: 20px;
+}
 .form--label {
   margin-bottom: 5px;
 }
